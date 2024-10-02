@@ -25,7 +25,7 @@ public class T03 {
                 mM = Double.parseDouble(input.nextLine());
                 stok = Integer.parseInt(input.nextLine());
                 rating = Double.parseDouble(input.nextLine());
-                diskon = mM / hP * -1;
+                diskon = mM / hP * -1 * 100;
                 if (diskon >= 40) {
                     kategori = "Once in a lifetime";
                 } else {
@@ -60,13 +60,13 @@ public class T03 {
                         }
                     }
                 }
+                if (rating >= 4.7 && diskon > 40) {
+                    kategoribuku = "The ultimate best";
+                } else {
+                    kategoribuku = "---";
+                }
+                System.out.println(iSBN + "|" + judul + "|" + penulis + "|" + tT + "|" + penerbit + "|" + fBE + "|" + hP + "|" + mM + "|" + stok + "|" + rating + "|" + grade + "|" + kategori + "|" + kategoribuku);
             }
-            if (rating >= 4.7 && diskon > 40) {
-                kategoribuku = "The ultimate best";
-            } else {
-                kategoribuku = "---";
-            }
-        } while (iSBN.equals("---"));
-        System.out.println(iSBN + "|" + judul + "|" + penulis + "|" + tT + "|" + penerbit + "|" + fBE + "|" + hP + "|" + mM + "|" + stok + "|" + rating + "|" + grade + "|" + kategori + "|" + kategoribuku);
+        } while (!iSBN.equals("---"));
     }
 }
